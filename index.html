@@ -78,10 +78,14 @@ body{
 
 /* KPI row */
 .kpis{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
   margin-top:32px;
 }
-@media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr);gap:16px}}
+.kpis > .kpi:nth-child(3){grid-column:1 / -1}
+@media(min-width:760px){
+  .kpis{grid-template-columns:repeat(3,1fr);gap:16px}
+  .kpis > .kpi:nth-child(3){grid-column:auto}
+}
 .kpi{
   background:rgba(255,255,255,0.06);
   border:1px solid rgba(255,255,255,0.1);
@@ -482,18 +486,13 @@ body{
     <div class="kpis">
       <div class="kpi">
         <div class="kpi-label">Desarrollo</div>
-        <div class="kpi-value">USD 550<small></small></div>
+        <div class="kpi-value">USD 500<small></small></div>
         <div class="kpi-foot">Pago único · llave en mano</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Plan mensual</div>
         <div class="kpi-value">USD 85<small>/mes</small></div>
         <div class="kpi-foot">Hosting + dominio + cambios</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Primer año total</div>
-        <div class="kpi-value">USD 1.570</div>
-        <div class="kpi-foot">Web nueva + 12 meses de plan</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Tiempo de entrega</div>
@@ -521,9 +520,9 @@ body{
 
         <div class="plan-price">
           <span class="plan-currency">USD</span>
-          <span class="plan-amount">550</span>
+          <span class="plan-amount">500</span>
         </div>
-        <div class="plan-modality">Pago único · 50% al inicio / 50% al entregar</div>
+        <div class="plan-modality">Pago en 2 cuotas · 50% al confirmar / 50% al finalizar</div>
 
         <ul class="plan-features">
           <li><span><strong>Web completa rediseñada</strong> con identidad propia, mobile-first y carga rápida.</span></li>
@@ -638,13 +637,13 @@ body{
 <section class="section" id="pago">
   <div class="container">
     <span class="section-num">04 · Cómo se paga</span>
-    <h2 class="section-title">Pago simple, en pesos o en dólares.</h2>
-    <p class="section-lead">Aceptamos MercadoPago y transferencia bancaria. El desarrollo se divide en dos pagos; el plan mensual se cobra los primeros días de cada mes.</p>
+    <h2 class="section-title">Pago en pesos, al dólar blue del día.</h2>
+    <p class="section-lead">Los precios figuran en USD como referencia. El pago se hace <strong>en pesos argentinos</strong> por MercadoPago o transferencia bancaria, convertidos al <strong>tipo de cambio del dólar blue</strong> del día en que decidas pagar.</p>
 
     <div class="payment">
       <div>
         <h3>Medios de pago</h3>
-        <p>Elegís el medio que más te convenga. Trabajamos en USD con tipo de cambio del día — facturamos en pesos si lo necesitás.</p>
+        <p>Elegís el medio que más te convenga. La conversión se hace al valor del dólar blue del día del pago — sin sorpresas en el tipo de cambio.</p>
         <div class="payment-methods">
           <div class="method">
             <div class="method-icon">💳</div>
@@ -657,7 +656,7 @@ body{
             <div class="method-icon">🏦</div>
             <div class="method-text">
               <strong>Transferencia bancaria</strong>
-              <span>CBU/CVU en ARS o transferencia internacional en USD.</span>
+              <span>CBU/CVU en pesos, directo a la cuenta.</span>
             </div>
           </div>
         </div>
@@ -670,15 +669,15 @@ body{
           <li class="schedule-item">
             <div class="schedule-step">1</div>
             <div>
-              <h5>Anticipo del desarrollo · USD 275</h5>
-              <p>50% al firmar la propuesta. Arrancamos la implementación.</p>
+              <h5>Anticipo del desarrollo · USD 250</h5>
+              <p>50% al confirmar la propuesta. Arrancamos la implementación.</p>
             </div>
           </li>
           <li class="schedule-item">
             <div class="schedule-step">2</div>
             <div>
-              <h5>Saldo del desarrollo · USD 275</h5>
-              <p>50% al entregar la web en producción, lista para usar.</p>
+              <h5>Saldo del desarrollo · USD 250</h5>
+              <p>50% al finalizar el proyecto, ya con las modificaciones que necesiten incluidas.</p>
             </div>
           </li>
           <li class="schedule-item">
