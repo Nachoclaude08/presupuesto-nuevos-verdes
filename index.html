@@ -207,10 +207,47 @@ body{
 
 .plan-modality{
   font-size:12px;letter-spacing:0.05em;
-  font-weight:600;margin-bottom:24px;
+  font-weight:600;margin-bottom:14px;
 }
 .plan:not(.featured) .plan-modality{color:var(--accent-dark)}
 .plan.featured .plan-modality{color:var(--accent)}
+
+.payment-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  margin-bottom:24px;
+}
+.split-pill{
+  border-radius:12px;
+  padding:12px 14px;
+  display:flex;flex-direction:column;gap:3px;
+  position:relative;
+}
+.plan:not(.featured) .split-pill{
+  background:#f8faf3;
+  border:1px solid var(--line);
+}
+.plan.featured .split-pill{
+  background:rgba(191,243,119,0.08);
+  border:1px solid rgba(191,243,119,0.2);
+}
+.split-pill-num{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;line-height:1.1;
+}
+.plan:not(.featured) .split-pill-num{color:var(--primary)}
+.plan.featured .split-pill-num{color:#fff}
+.split-pill-when{
+  font-size:11px;line-height:1.3;font-weight:500;
+}
+.plan:not(.featured) .split-pill-when{color:var(--ink-soft)}
+.plan.featured .split-pill-when{color:rgba(255,255,255,0.7)}
+.split-pill-tag{
+  position:absolute;top:-7px;left:12px;
+  font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  padding:2px 8px;border-radius:999px;
+}
+.plan:not(.featured) .split-pill-tag{background:var(--accent-dark);color:#fff}
+.plan.featured .split-pill-tag{background:var(--accent);color:var(--primary)}
 
 .plan-features{
   list-style:none;display:flex;flex-direction:column;gap:12px;
@@ -491,7 +528,7 @@ body{
       </div>
       <div class="kpi">
         <div class="kpi-label">Plan mensual</div>
-        <div class="kpi-value">USD 85<small>/mes</small></div>
+        <div class="kpi-value">USD 115<small>/mes</small></div>
         <div class="kpi-foot">Hosting + dominio + cambios</div>
       </div>
       <div class="kpi">
@@ -522,7 +559,19 @@ body{
           <span class="plan-currency">USD</span>
           <span class="plan-amount">500</span>
         </div>
-        <div class="plan-modality">Pago en 2 cuotas · 50% al confirmar / 50% al finalizar</div>
+        <div class="plan-modality">Pago en 2 cuotas iguales</div>
+        <div class="payment-split">
+          <div class="split-pill">
+            <span class="split-pill-tag">Cuota 1</span>
+            <span class="split-pill-num">USD 250</span>
+            <span class="split-pill-when">Al confirmar la propuesta</span>
+          </div>
+          <div class="split-pill">
+            <span class="split-pill-tag">Cuota 2</span>
+            <span class="split-pill-num">USD 250</span>
+            <span class="split-pill-when">Al finalizar el proyecto</span>
+          </div>
+        </div>
 
         <ul class="plan-features">
           <li><span><strong>Web completa rediseñada</strong> con identidad propia, mobile-first y carga rápida.</span></li>
@@ -541,7 +590,7 @@ body{
 
         <div class="plan-price">
           <span class="plan-currency">USD</span>
-          <span class="plan-amount">85</span>
+          <span class="plan-amount">115</span>
           <span class="plan-period">/mes</span>
         </div>
         <div class="plan-modality">Mensual · Sin permanencia mínima</div>
@@ -683,7 +732,7 @@ body{
           <li class="schedule-item">
             <div class="schedule-step">3</div>
             <div>
-              <h5>Plan Verde Activo · USD 85/mes</h5>
+              <h5>Plan Verde Activo · USD 115/mes</h5>
               <p>Desde el mes siguiente a la entrega, los primeros 5 días de cada mes.</p>
             </div>
           </li>
